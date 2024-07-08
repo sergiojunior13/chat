@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="jhm-logo.jpg" type="image/x-icon" />
+    <title>WhatsApp JHM</title>
+  </head>
+  <body>
+    <header>
+      <h1>WhatsApp JHM</h1>
+      <p>Criado por Sérgio Jr. - 303</p>
+    </header>
+
+    <main>
+      <p>Um WhatsApp, só que para os alunos da EEJHM.</p>
+
+      <form id="jhm-form">
+        <div>
+          <label for="name">Seu nome</label>
+          <input type="text" name="name" id="name" placeholder="Nome..." required />
+        </div>
+        <div>
+          <label for="classroom">Sua turma</label>
+          <input
+            type="number"
+            max="310"
+            min="100"
+            name="classroom"
+            id="classroom"
+            placeholder="Turma..."
+            required
+          />
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+    </main>
+
+    <script>
+      const form = document.getElementById("jhm-form");
+
+      form.onsubmit = e => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+
+        const data = {
+          name: formData.get("name"),
+          classroom: formData.get("classroom"),
+        };
+
+        localStorage.setItem("username", `${data.name} - ${data.classroom}`);
+
+        window.location.href = "/chat.html";
+      };
+    </script>
+  </body>
+</html>
