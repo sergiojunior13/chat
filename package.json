@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "native-dns": "^0.7.0",
     "ws": "^8.18.0"
   }
 }

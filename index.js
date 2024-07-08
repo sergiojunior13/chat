@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const hostname = "0.0.0.0";
-const port = 3000;
+const port = 80;
 
 const server = http.createServer((req, res) => {
   console.log(`Request for ${req.url} received.`);
@@ -54,5 +54,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(
+    `Servidor HTTP rodando em \x1b[1m\x1b[38;2;79;70;229mhttp://${hostname}:${port}/\x1b[0m`
+  );
 });
